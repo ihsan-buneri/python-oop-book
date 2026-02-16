@@ -124,3 +124,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* On wide screens, offset the fixed sidebar to align with the centered 1440px container */
+@media (min-width: 1441px) {
+  [data-slot="sidebar-container"] {
+    left: calc((100vw - 1440px) / 2) !important;
+  }
+}
