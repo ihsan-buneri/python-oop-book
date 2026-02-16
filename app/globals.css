@@ -138,3 +138,8 @@
   top: 3.5rem !important;
   height: calc(100svh - 3.5rem) !important;
 }
+
+/* Make sidebar background match docs content instead of header */
+.docs-sidebar [data-sidebar="sidebar"] {
+  background-color: var(--background) !important;
+}
