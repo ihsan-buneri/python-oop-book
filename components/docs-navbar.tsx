@@ -1,11 +1,14 @@
 "use client"
 
 import Link from "next/link"
-import { Moon, Sun, Github } from "lucide-react"
+import { Moon, Sun, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useSidebar } from "@/components/ui/sidebar"
 
 export function DocsNavbar() {
+  const { toggleSidebar } = useSidebar()
+
   const toggleTheme = () => {
     const html = document.documentElement
     const isDark = html.classList.toggle("dark")
@@ -35,7 +38,7 @@ export function DocsNavbar() {
           />
         </div>
 
-        {/* Theme + GitHub - Right */}
+        {/* Theme + Menu Toggle - Right */}
         <div className="flex items-center gap-2 shrink-0">
           <Button
             variant="ghost"
@@ -47,7 +50,17 @@ export function DocsNavbar() {
             <Sun className="absolute size-4 opacity-0 scale-0 transition-all dark:opacity-100 dark:scale-100" />
             <Moon className="absolute size-4 opacity-100 scale-100 transition-all dark:opacity-0 dark:scale-0" />
           </Button>
-          {/* Optional: you can wire this to your own GitHub repo later */}
+
+          {/* Hamburger menu - visible only on small screens */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-9 min-[1000px]:hidden"
+            onClick={toggleSidebar}
+            aria-label="Toggle menu"
+          >
+            <Menu className="size-5" />
+          </Button>
         </div>
       </div>
     </header>
