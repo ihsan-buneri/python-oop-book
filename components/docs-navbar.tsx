@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Moon, Sun, Menu } from "lucide-react"
+import { Moon, Sun, Menu, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useSidebar } from "@/components/ui/sidebar"
@@ -38,7 +38,7 @@ export function DocsNavbar() {
           />
         </div>
 
-        {/* Theme + Menu Toggle - Right */}
+        {/* Theme + GitHub + Menu Toggle - Right */}
         <div className="flex items-center gap-2 shrink-0">
           <Button
             variant="ghost"
@@ -49,6 +49,23 @@ export function DocsNavbar() {
           >
             <Sun className="absolute size-4 opacity-0 scale-0 transition-all dark:opacity-100 dark:scale-100" />
             <Moon className="absolute size-4 opacity-100 scale-100 transition-all dark:opacity-0 dark:scale-0" />
+          </Button>
+
+          {/* GitHub link */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-9"
+            asChild
+          >
+            <Link
+              href="https://github.com/ihsan-buneri/python-oop-book"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on GitHub"
+            >
+              <Github className="size-4" />
+            </Link>
           </Button>
 
           {/* Hamburger menu - visible only on small screens */}
