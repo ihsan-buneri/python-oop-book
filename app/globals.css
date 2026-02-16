@@ -120,6 +120,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -130,4 +131,10 @@
   [data-slot="sidebar-container"] {
     left: calc((100vw - 1440px) / 2) !important;
   }
+}
+
+/* Offset sidebar below the sticky header */
+.docs-sidebar [data-slot="sidebar-container"] {
+  top: 3.5rem !important;
+  height: calc(100svh - 3.5rem) !important;
 }

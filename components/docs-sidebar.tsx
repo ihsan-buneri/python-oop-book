@@ -35,7 +35,7 @@ function NavItem({ item }: { item: DocItem }) {
 export function DocsSidebar() {
   return (
     <Sidebar collapsible="offcanvas" side="left" className="bg-background text-foreground docs-sidebar">
-      <SidebarContent className="pt-2">
+      <SidebarContent className="pt-20">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
